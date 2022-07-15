@@ -1,4 +1,0 @@
--- CreateTable
-CREATE TABLE "Movie" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
-);
