@@ -10,9 +10,30 @@ generator client {
   provider = "prisma-client-js"
 }
 
+model Category {
+  id       Int       @id @default(autoincrement())
+  name     String
+  products Product[] @relation()
+}
+
 model Product {
-  id          Int    @id @default(autoincrement())
+  id          Int       @id @default(autoincrement())
   name        String
   price       Int
   description String
+  category    Category? @relation(fields: [categoryId], references: [id])
+  categoryId  Int?
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  name     String
+  email    String @unique
+  password String
+  role     Role[] @default([BASIC])
+}
+
+enum Role {
+  BASIC
+  ADMIN
 }

@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React from "react";
-import { useToastStore } from ".";
+import { useToastStore } from "../../stores/toast";
 
 const Toasts = () => {
   const { toasts } = useToastStore();

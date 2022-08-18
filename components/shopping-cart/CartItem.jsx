@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useCartStore } from "../../contexts/shoppingcart";
+import { useCartStore } from "../../stores/shoppingcart";
 
 const CartItem = ({ item, handleRemoveItem }) => {
   const { removeItem, incAmount, decAmount } = useCartStore();
